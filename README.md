@@ -4,6 +4,10 @@
 
 The app allows users to discover upcoming events in various cities chosen by the user. The app will allow users to access cached data about events offline.
 
+## Serverless functions
+
+AWS Lambda is the preferred serverless function provider used in this app. These serverless functions are responsible for handling authorization using the OAuth2 authentication flow. Using serverless functions instead of a traditional server will make the app more lightweight and flexible, as well as ensure scalability.
+
 ## Features
 
 ### FEATURE 1: Filter Events By City
