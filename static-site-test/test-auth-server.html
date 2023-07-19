@@ -65,7 +65,7 @@
       const getAccessToken = document.getElementById("getToken");
       const accessTokenElement = document.getElementById("accessToken");
       const getToken =
-        "https://r4piehi959.execute-api.eu-central-1.amazonaws.com/dev/api/token/";
+        "https://r4piehi959.execute-api.eu-central-1.amazonaws.com/dev/api/token";
 
       getAccessToken.onclick = function () {
         let code = codeValue.value;
@@ -85,7 +85,7 @@
       const getEvents = document.getElementById("getEvents");
       const events = document.getElementById("events");
       const getCalendarEvents =
-        "https://r4piehi959.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/";
+        "https://r4piehi959.execute-api.eu-central-1.amazonaws.com/dev/api/get-events";
 
       getEvents.onclick = function () {
         const { access_token } = JSON.parse(accessTokenElement.innerText);
