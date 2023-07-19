@@ -42,9 +42,9 @@ const removeQuery = () => {
  * This function will fetch the list of all events
  */
 export const getEvents = async () => {
-  if (window.location.href.startsWith("http://localhost")) {
-    return mockData;
-  }
+  // if (window.location.href.startsWith("http://localhost")) {
+  //   return mockData;
+  // }
 
   const token = await getAccessToken();
 
@@ -52,7 +52,6 @@ export const getEvents = async () => {
     removeQuery();
     const url =
       "https://r4piehi959.execute-api.eu-central-1.amazonaws.com/dev/api/get-events/" +
-      "/" +
       token;
     const response = await fetch(url);
     const result = await response.json();
@@ -66,7 +65,6 @@ const getToken = async (code) => {
   const encodeCode = encodeURIComponent(code);
   const response = await fetch(
     "https://r4piehi959.execute-api.eu-central-1.amazonaws.com/dev/api/token/" +
-      "/" +
       encodeCode
   );
   const { access_token } = await response.json();
