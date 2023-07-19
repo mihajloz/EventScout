@@ -21,10 +21,23 @@ describe("Event", () => {
     expect(titleElement).toBeInTheDocument();
   });
 
+  // it("renders event start time", () => {
+  //   const event = allEvents[0];
+  //   const { queryByText } = render(<Event event={event} />);
+  //   const startTimeElement = queryByText(event.start.dateTime);
+  //   expect(startTimeElement).toBeInTheDocument();
+  // });
+
   it("renders event start time", () => {
     const event = allEvents[0];
     const { queryByText } = render(<Event event={event} />);
-    const startTimeElement = queryByText(event.start.dateTime);
+    const startTimeElement = queryByText(
+      new Date(event.start.dateTime).toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        timeZone: "Europe/Berlin",
+      })
+    );
     expect(startTimeElement).toBeInTheDocument();
   });
 

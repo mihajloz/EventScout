@@ -4,7 +4,10 @@ import NumberOfEvents from "../components/NumberOfEvents";
 let inputElement;
 
 beforeEach(() => {
-  const { container } = render(<NumberOfEvents />);
+  const setCurrentNOE = jest.fn(); // Create a dummy prop function
+  const { container } = render(
+    <NumberOfEvents setCurrentNOE={setCurrentNOE} />
+  );
   inputElement = container.querySelector('input[type="number"]');
 });
 

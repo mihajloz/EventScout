@@ -54,9 +54,7 @@ describe("<App /> integration", () => {
     const AppComponent = render(<App />);
     const AppDOM = AppComponent.container.firstChild;
 
-    const NumberOfEventsDOM = AppDOM.querySelector("#numberOfEvents");
-    const NumberOfEventsInput =
-      within(NumberOfEventsDOM).queryByRole("spinbutton");
+    const NumberOfEventsInput = AppDOM.querySelector('input[type="number"]');
 
     await user.clear(NumberOfEventsInput);
     await user.type(NumberOfEventsInput, "{backspace}{backspace}10");
