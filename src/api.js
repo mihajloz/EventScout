@@ -1,4 +1,5 @@
 import mockData from "./mock-data";
+import NProgress from "nprogress";
 
 /**
  *
@@ -42,9 +43,11 @@ const removeQuery = () => {
  * This function will fetch the list of all events
  */
 export const getEvents = async () => {
-  // if (window.location.href.startsWith("http://localhost")) {
-  //   return mockData;
-  // }
+  NProgress.start();
+
+  if (window.location.href.startsWith("http://localhost")) {
+    return mockData;
+  }
 
   const token = await getAccessToken();
 
