@@ -1,12 +1,19 @@
 import { useState } from "react";
 
-const NumberOfEvents = ({ setCurrentNOE }) => {
+const NumberOfEvents = ({ setCurrentNOE, setErrorAlert }) => {
   const [value, setValue] = useState(32);
 
   const handleChange = (event) => {
     const newValue = event.target.value;
     setValue(newValue);
-    setCurrentNOE(newValue);
+    // setCurrentNOE(newValue);
+
+    if (isNaN(newValue) || newValue <= 0 || newValue > 32) {
+      setErrorAlert("Please enter a valid number of events (1 to 32).");
+    } else {
+      setErrorAlert(""); // Reset errorAlert if the input is valid
+      setCurrentNOE(newValue);
+    }
   };
 
   return (

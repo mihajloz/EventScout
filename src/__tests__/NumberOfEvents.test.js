@@ -6,7 +6,7 @@ let inputElement;
 beforeEach(() => {
   const setCurrentNOE = jest.fn(); // Create a dummy prop function
   const { container } = render(
-    <NumberOfEvents setCurrentNOE={setCurrentNOE} />
+    <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={() => {}} />
   );
   inputElement = container.querySelector('input[type="number"]');
 });
