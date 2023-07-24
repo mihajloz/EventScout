@@ -201,3 +201,19 @@ label[for="place"] {
   width: 250px;
   z-index: 1000;
 }
+
+.charts-container {
+  display: grid;
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .charts-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
