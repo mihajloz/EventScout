@@ -14,7 +14,7 @@ const CityEventsChart = ({ allLocations, events }) => {
 
   useEffect(() => {
     setData(getData());
-  }, [`${data}`]);
+  }, [allLocations, events]);
 
   const getData = () => {
     const data = allLocations.map((location) => {
@@ -26,6 +26,11 @@ const CityEventsChart = ({ allLocations, events }) => {
     });
     return data;
   };
+  if (data.length === 0) {
+    // Render a loading indicator or a message indicating that data is loading.
+    // You can return a <div>Loading...</div> or any other loading component.
+    return <div>Loading...</div>;
+  }
 
   return (
     <ResponsiveContainer width={400} height={400}>
